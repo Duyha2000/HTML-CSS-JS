@@ -1,0 +1,101 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+input,
+select,
+textarea {
+  background-color: transparent;
+  outline: none;
+}
+button {
+  cursor: pointer;
+  background-color: transparent;
+  outline: none;
+  border: 0;
+}
+body {
+  min-height: 100vh;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1;
+}
+
+#container {
+  width: 700px;
+  display: block;
+  margin: 0 auto;
+  background-color: #80808021;
+}
+h1 {
+  /* Căn giữa 1 dòng chữ */
+  text-align: center;
+  width: 455px;
+  display: block;
+  margin: auto;
+  margin-bottom: 30px;
+  padding-top: 30px;
+  /* Kích thước font chữ */
+  font-size: 32px;
+  /* Tạo độ đậm cho chữ */
+  font-weight: 700;
+}
+form {
+  /* display: flex;
+  flex-direction: column; */
+  /* justify: căn theo hàng ngang */
+  /* align: căn theo chiều dọc */
+  /* align-items: flex-start;
+  gap: 20px; */
+  display: inline-block;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.field {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+label {
+  font-size: 23px;
+  margin-right: 30px;
+}
+
+button {
+  background-color: gray;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 50px;
+  padding-right: 50px;
+  border-radius: 10px;
+  color: white;
+  /* Viết hoa tất cả các chữ */
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+input {
+  padding: 12px 20px;
+  width: 100%;
+  border: 1px solid gray;
+}
+/* Display: flex */
+/* Flex- direction: column /row */
+/* justify-content: theo dòng */
+/* align items: theo cột */
+/* Khi dùng flex: gap tạo ra khoảng cách */

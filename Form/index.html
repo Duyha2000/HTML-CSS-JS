@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>Form</title>
+  </head>
+  <body>
+    <form>
+      <h3 class="title">Form Login</h3>
+      <!-- disabeld: không cho phép gõ -->
+      <!-- br: break: xuống dòng -->
+      <!-- div: division: chia ra -->
+      <div class="field">
+        <label for="user">Username:</label>
+        <input type="text" name="user" placeholder="Input user:" id="user" />
+      </div>
+      <!-- Input: type = password -->
+      <div class="field">
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          name="password"
+          placeholder="Input password:"
+          id="password"
+        />
+      </div>
+
+      <div class="check-radio">
+        <!-- Input type = "radio"-->
+        <div class="field">
+          <label for="radio">Radio buttons</label>
+          <div class="radio-list">
+            <input type="radio" name="radio1" />
+            <input type="radio" name="radio2" />
+            <input type="radio" name="radio3" />
+          </div>
+        </div>
+
+        <!-- Input type = "checkbox"-->
+        <div class="field">
+          <label for="checkbox">Checkbox</label>
+          <div class="checkbox-list">
+            <input type="checkbox" name="checkbox1" />
+            <input type="checkbox" name="checkbox2" />
+            <input type="checkbox" name="checkbox3" />
+          </div>
+        </div>
+      </div>
+      <!-- Input type = "date"-->
+      <div class="field">
+        <label for="date">Date</label>
+        <input type="date" id="date" />
+      </div>
+      <!-- Input type = "file"-->
+      <div class="field">
+        <label for="file">File</label>
+        <input type="file" class="file" />
+      </div>
+
+      <!-- Input type = "reset": reset lai du lieu cua form -->
+      <div class="submit-form">
+        <input
+          type="reset"
+          name="reset"
+          placeholder="Input reset:"
+          id="reset"
+        />
+        <button type="submit">Submit Form</button>
+      </div>
+    </form>
+  </body>
+</html>

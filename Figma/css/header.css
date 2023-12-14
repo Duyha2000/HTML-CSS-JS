@@ -1,0 +1,59 @@
+.header-menu-item {
+  list-style: none;
+}
+.header-menu-link {
+  /* Mất gạch chân */
+  text-decoration: none;
+  font-weight: 400;
+  color: #4f5665;
+}
+header {
+  margin-top: 50px;
+}
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-menu {
+  display: flex;
+  gap: 40px;
+}
+.header-authen {
+  display: flex;
+  gap: 30px;
+}
+.header-authen-signIn {
+  color: #0b132a;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.header-authen-signUp {
+  color: #f53855;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 50px;
+  border: 1px solid #f53855;
+  /* trên dưới - trái phải */
+  padding: 13px 45px;
+  /* trên - phải - dưới - trái */
+}
+
+.header-menu-item {
+  position: relative;
+}
+.header-menu-link::after {
+  content: "";
+  transition: all 0.3s linear;
+  width: 0;
+  height: 3px;
+  background: orangered;
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+}
+.header-menu-link:hover::after {
+  width: 50%;
+  transform: translateX(100%);
+}

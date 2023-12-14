@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Flex-box</title>
+    <link rel="stylesheet" href="app.css" />
+  </head>
+  <body>
+    <!--  -->
+    <div id="container">
+      <h1>Tạo form mô tả cảm xúc của bạn về tấm ảnh tâm đắc của mình</h1>
+
+      <form>
+        <div class="field">
+          <!-- label: for = input: id -->
+          <label for="name">Họ và tên:</label>
+          <!-- Nhìn thấy được dòng chữ của input -->
+          <input type="text" id="name" placeholder="Nhập họ và tên" />
+        </div>
+
+        <div class="field">
+          <label for="email">Email:</label>
+          <input type="email" id="email" placeholder="Nhập email của bạn" />
+        </div>
+
+        <div class="field">
+          <label for="img">Img:</label>
+          <input type="file" />
+        </div>
+        <div class="field">
+          <label for="content">Nội dung:</label>
+          <textarea name="content" id="content" cols="2" rows="4"></textarea>
+        </div>
+        <button type="submit">Gửi</button>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+.hero {
+  margin-top: 70px;
+}
+.hero-button {
+  text-transform: capitalize;
+  color: white;
+  background-color: #f53838;
+  border-radius: 10px;
+  padding: 17.5px 77.5px;
+  font-size: 16px;
+  font-weight: 700;
+}

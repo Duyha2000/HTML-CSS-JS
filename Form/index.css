@@ -1,0 +1,105 @@
+/* Reset */
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+input,
+select,
+textarea {
+  background-color: transparent;
+  outline: none;
+}
+button {
+  cursor: pointer;
+  background-color: transparent;
+  outline: none;
+  border: 0;
+}
+body {
+  min-height: 100vh;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1;
+}
+
+form {
+  background-color: #80808085;
+  width: 350px;
+  margin: 0 auto;
+  /* display: Hiển thị - flex: linh hoạt */
+  display: flex;
+  /* justify: can theo hang ngang */
+  /* align: doc */
+  /* direction: theo hướng */
+  flex-direction: column;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+.title {
+  /* Kích thước font chữ */
+  font-size: 30px;
+  /* Độ đậm của chữ */
+  font-weight: 600;
+  text-align: center;
+  /* Tạo khoảng cách giữa các phần tử: padding - margin */
+  /* Padding: bên trong - margin: bên ngoài */
+  margin-bottom: 10px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+label {
+  font-size: 20px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+input {
+  /* Border: đường viền */
+  /* solid: nét liền */
+  /* dashed: nét đứt */
+  border: 1px solid gray;
+  padding: 10px;
+  /* radius: bo goc */
+  border-radius: 10px;
+}
+
+.check-radio {
+  display: flex;
+  justify-content: space-between;
+}
+.file {
+  margin-bottom: 20px;
+}
+.submit-form {
+  display: flex;
+  justify-content: space-around;
+}
+button {
+  border: 1px solid gray;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 10px;
+}
+#reset {
+  padding-left: 30px;
+  padding-right: 30px;
+}
