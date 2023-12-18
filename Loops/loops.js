@@ -140,19 +140,20 @@
 // }
 // console.log(product);
 // Cach 1:
-let k = parseInt(prompt("Nhap so k")); // 3
+let n = parseInt(prompt("Nhap so k")); // 3
 
-let count = 0;
+let count = 0; // bài đếm có biến count = 0
 let input;
-while (input !== k) {
+if (n < 1 || n > 10) console.log("So can nhap phai nam trong khoang tu 1->10");
+while (input !== n) {
   input = parseInt(prompt("Nhap 1 so")); //
   count++;
 }
-console.log(`Ban da nhap sau ${count} lan`);
+console.log(`You got it after ${count} tries!`);
 
 // Cach 2:
 // let n = parseInt(prompt("Nhap so cần đoán"));
-// if (n < 1 || n > 10) console.log("So can nhap phai nam trong khoang tu 1->10");
+
 // else {
 //   let tries = 0;
 //   let guess;
@@ -167,3 +168,19 @@ console.log(`Ban da nhap sau ${count} lan`);
 //     }
 //   }
 // }
+
+// So nguyen to:số chia hết cho 1 và chính nó
+// Bắt đầu từ số 2
+// 5: 1 -> 5
+// 6: 6 -> 2,3
+// 7: 2 -> 7
+let result = "số nguyên tố";
+let prime = parseInt(prompt("Nhap vao 1 so"));
+for (let i = 2; i < prime; i++) {
+  if (prime % i === 0) {
+    result = "Kh phai so nguyen to";
+    break;
+  }
+}
+
+console.log(result);
