@@ -1,13 +1,13 @@
-# Dùng vòng lặp while
+# Dùng vòng lặp for && while
 
 ## Bài tập 1:
 
 Bạn hãy viết chương trình nhập vào bàn phím số nguyên n và hiển thị ra các số chẵn từ n tới 100.
 Ví dụ nếu nhập n = 90 thì chương trình sẽ hiển thị ra màn hình: 90 92 94 96 98 100
 
-## Bài tập 2: Nhập 1 số Tính lũy thừa của một số:
+## Bài tập 2: Nhập 1 số Tính giai thừa của một số:
 
-Ví dụ: 5! = 5 _ 4 _ 3 _ 2 _ 1
+Ví dụ: 5! = 5 _ 4 _ 3 _ 2 _ 1 -> 120
 
 ## Bài tập 3:
 
@@ -15,9 +15,32 @@ Bạn hãy viết chương trình nhập từ bàn phím hai số nguyên a và 
 hết cho cả 3 và 5.
 Ví dụ nếu nhập a = 1, b = 50 thì chương trình sẽ hiển thị ra màn hình: 15 30 45
 
-## Bài tập 4: Nhập 1 số nguyên và tính tổng các số đó, viết số nghịch đảo của nó (dễ)
+## Bài tập 4: Nhập 1 số nguyên và tính tổng các số đó
 
-Ví dụ: 3243 -> Tổng = 3 + 2 + 4 + 3 -> Nghịch đảo: 3423
+Ví dụ: 3243 -> Tổng = 3 + 2 + 4 + 3
+
+## Bài tap 4.1 (nang cao): Nhập 1 số nguyên n>0 -> viết số nghịch đảo của nó
+
+3248 = 3 _ 10^3 + 2 _ 10^2 + 4 * 10^1 + 8 *10^0
+8423 = 8 _ 10^3 + 4 _ 10^2 + 2 * 10^1 + 8 *10^0
+
+-> Dem so chu so cua n?
+let count = 0
+110 / 10 == 11
+count++;
+
+11 / 10 = 1
+count++
+
+1/10 = 0
+count++
+-> count = 3
+let sum = 0
+for(let i = count - 1; i >=0; i--){
+sum += (n %10) \* Math.pow(10,i);
+}
+sum = ???
+Ví dụ: 3248 -> Nghịch đảo: 8423
 
 ## Bài tập 5: Chúng ta sẽ phát triển một ứng dụng nhiều chức năng cho phép người dùng chọn chức năng để sử dụng.
 
