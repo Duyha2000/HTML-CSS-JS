@@ -20,7 +20,12 @@ console.log(name ?? "Người dùng ẩn danh");
 
 // Ex2:
 // productData?.content nếu không có dữ liệu sẽ mang giá trị null or undefined
-const selectFilterProductData = (productData?.content ?? []).map((item) => ({
-  value: item?.id,
-  label: item?.name,
-}));
+// const selectFilterProductData = (productData?.content ?? []).map((item) => ({
+//   value: item?.id,
+//   label: item?.name,
+// }));
+
+// let arr = [3, 4, 5, 6, 2, 2, "3", "32333333"];
+// //         0  1  2  3  4  5   6 7
+// console.log(arr.length);
+// console.log(arr[arr.length - 1]);
