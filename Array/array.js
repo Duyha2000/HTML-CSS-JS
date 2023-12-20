@@ -203,3 +203,16 @@ const index = idea.findIndex((element) => element === 90000); // 1
 // B2: Splice để xóa phần tử (index: vị trí, deleteCount: số phần tử muốn xóa)
 idea.splice(index, 1);
 console.log(idea);
+
+// Destructuring:
+let arr3 = ["apple", "samsung", "sony", "sharp"];
+// let apple = arr3[0];
+// let samsung = arr3[1];
+// let sony = arr3[2];
+
+// let [ (0), (1) b,(2) c] = arr3; // apple - sony
+
+// Rest : trả về 1 mảng gồm các phần tử còn lại
+let [a, b, ...rest] = arr3;
+console.log(a, b); // apple, samsung
+console.log(rest); // sony, sharp
