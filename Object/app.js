@@ -13,7 +13,7 @@ let user = {
 // let { id, address, city } = user;
 // console.log(id, address, city);
 // Truy cập thuộc tính city mà không sử dụng optional chaining
-console.log(user.city); // Dòng này có thể gây ra lỗi nếu user là null hoặc undefined
+console.log(user.age); // Dòng này có thể gây ra lỗi nếu user là null hoặc undefined
 console.log(5);
 
 // primitives value: tham trị - object : tham chiếu
@@ -44,3 +44,5 @@ const studentData =
   }) ?? [];
 console.log(studentData);
 document.getElementById("title").innerHTML = studentData.join("");
+
+// Tham trị - tham chiếu
