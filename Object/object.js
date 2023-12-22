@@ -1055,4 +1055,21 @@ const products =
     </div>`;
   }) ?? [];
 
-document.getElementById("title").innerHTML = products;
+// Array Map: truy cập giá trị trong mảng và trả về mảng mới, lấy dữ liệu bên back-end về và hiển thị ra giao diện
+const listStudent = [
+  {
+    name: "Duy",
+    age: 22,
+    male: true,
+    phoneNumber: +84123456729,
+  },
+  { name: "Tran", age: 25, male: false, phoneNumber: +84123456789 },
+  { name: "Duc", age: 23, male: false, phoneNumber: +8412345789 },
+];
+
+const listStudent2 = listStudent.map(({ name, male }) => {
+  console.log(name, male, "Student");
+  return `<p> ${name} - ${male} </p>`;
+  // Trả về
+});
+document.getElementById("title").innerHTML = listStudent2.join("");
