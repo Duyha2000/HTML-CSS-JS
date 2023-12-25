@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+    <style>
+      .mystyle {
+        background-color: coral;
+        padding: 16px;
+      }
+    </style>
+  </head>
+  <!-- document.querySelector -->
+  <body>
+    <h1 id="hello">Hello</h1>
+    <h1>Hi</h1>
+    <h1>Xin chao</h1>
+    <h2 id="timer"></h2>
+    <form onsubmit="handleSubmit(event)">
+      <div class="field">
+        <label for="username">Enter your user name</label>
+        <input type="text" placeholder="Enter your user name" id="username" />
+      </div>
+      <!-- Email -->
+      <div class="field">
+        <label for="email">Enter your user email</label>
+        <input type="email" placeholder="Enter your email" id="email" />
+      </div>
+      <!-- Select - option  -->
+      <div class="field">
+        <label for="country">Select your country</label>
+        <select id="country">
+          <option value="usa">USA</option>
+          <option value="canada">Canada</option>
+          <option value="uk">United Kingdom</option>
+          <!-- Add more options as needed -->
+        </select>
+      </div>
+      <button type="submit">Login</button>
+    </form>
+    <button onclick="myFunction()">Try it</button>
+    <button onclick="handleChange()">Thay Đổi Màu</button>
+
+    <script src="dom.js"></script>
+  </body>
+</html>

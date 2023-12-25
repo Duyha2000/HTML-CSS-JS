@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>setTimeout - setInterVal</title>
+  </head>
+  <body>
+    <!-- setTimeout - setInterval - localStorage - sessionStorage - cookie -->
+    <div id="timer"></div>
+    <script>
+      let input = parseInt(
+        prompt("Hãy nhập vào thời gian bạn mốn bắt đầu đếm ngược (số phút): ")
+      );
+      let startTime = input * 60;
+
+      displayTime(startTime);
+
+      let countdownInterval = setInterval(() => {
+        startTime--;
+        displayTime(startTime);
+
+        if (startTime === 0) {
+          clearInterval(countdownInterval);
+          alert("Hết thời gian!");
+        }
+      }, 1000);
+
+      function displayTime(timeInSeconds) {
+        let minutes = Math.floor(timeInSeconds / 60);
+        let seconds = timeInSeconds % 60;
+
+        let displayMinutes = minutes < 10 ? "0" + minutes : minutes;
+        let displaySeconds = seconds < 10 ? "0" + seconds : seconds;
+
+        document.getElementById(
+          "timer"
+        ).innerHTML = `${displayMinutes}:${displaySeconds} <br>`;
+      }
+    </script>
+  </body>
+</html>
