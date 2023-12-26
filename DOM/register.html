@@ -5,8 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Time Events</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/lelinh014756/fui-toast-js@master/assets/css/toast@1.0.1/fuiToast.min.css"
+    />
   </head>
   <body>
+    <div id="fui-toast"></div>
     <!-- <h1 class="hello">Xin chao</h1>
     <h1 class="hello">Xin chao</h1>
     <h1 class="display">Xin chao</h1>
@@ -14,6 +20,7 @@
     <button onclick="changeBackgroundColor()" class="click">
       Click here!!!!
     </button> -->
+    <h1>Register Form</h1>
     <form onsubmit="handleSubmit(event)">
       <!-- username, password, confirm password -->
       <div class="field">
@@ -24,7 +31,6 @@
           placeholder="Enter your username"
           required
           maxlength="12"
-          minlength="2"
           onblur="hideErrorUsername()"
         />
         <!-- required: bắt buộc phải nhập -->
@@ -43,6 +49,7 @@
         />
         <p class="msg-password"></p>
       </div>
+
       <div class="field">
         <label for="confirmPassword">Confirm password</label>
         <input
@@ -64,6 +71,13 @@
         display: none;
       }
     </style>
-    <script src="timeEvent.js"></script>
+    <!-- <script src="timeEvent.js"></script> -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/gh/lelinh014756/fui-toast-js@master/assets/js/toast@1.0.1/fuiToast.min.js"
+    ></script>
+
+    <script src="register.js"></script>
+    <script src="localStorage.js"></script>
   </body>
 </html>
