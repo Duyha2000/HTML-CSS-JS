@@ -1,3 +1,4 @@
+// Mỗi lần add 1 student sẽ generate ra 1 ID mới (liên tưởng mỗi học sinh có 1 Mã số sinh viên khác nhau nên cần ID để phân biệt được)
 const uuidv4 = () => {
   return "10000000-1000-4000-8000-100000000000".replace(/[018]/g, (c) =>
     (
@@ -6,15 +7,17 @@ const uuidv4 = () => {
     ).toString(16)
   );
 };
-// Create array
+// Tạo 1 mảng hiển thị thông tin của sinh viên: nếu ở local chưa có học sinh nào thì ta sẽ dùng ?? để hiển thị ra mảng rỗng []
+// nếu đã có hiển thị thông tin mảng đấy ra để dùng vòng lặp for kết hợp innerHtml hiển thị ra giao diện
 let listStudent = JSON.parse(localStorage.getItem("listStudent")) ?? [];
+// Truy xuất các phần tử trong DOM
 let fullName = document.querySelector("#fullName");
 let date = document.querySelector("#date");
 let gender = document.querySelector("#gender");
 let classmate = document.querySelector("#classmate");
 let image = document.querySelector("#image");
 
-// Display
+// Hiển thị sinh viên ra ngoài giao diện
 function display() {
   let html = ``;
   for (let i = 0; i < listStudent.length; i++) {
@@ -31,7 +34,7 @@ function display() {
 `;
   }
   document.querySelector("#tbody1").innerHTML = html;
-  // Reset
+  // Reset form sau khi submit thành công
   fullName.value = "";
   date.value = "";
   gender.value = "";
@@ -39,7 +42,7 @@ function display() {
   image.value = "";
 }
 
-// Add
+// Thêm sinh viên: mỗi sinh viên là 1 object(đối tượng), nên sau khi input sẽ lấy value các thuộc tính và push vào mảng Student
 function addStudent() {
   listStudent.push({
     id: uuidv4(),
@@ -49,26 +52,33 @@ function addStudent() {
     classmate: classmate.value,
     image: image.value,
   });
+  // Sau khi xóa xong sẽ display để hiển thị lại bảng
   display();
+  // Sau khi xóa xong sẽ cập nhật lại local
   saveToLocal();
 }
 
-// Delete
+// Delete 1 học sinh
 function deleteStudent(studentId) {
-  // Find the index of the student with the given ID
+  // Tìm vị trí của phần tử trong mảng (dùng findIndex)
   const index = listStudent.findIndex((student) => student.id === studentId);
-  // Remove the student from the list
+  // Xóa 1 sinh viên (hay kết hợp giữa findIndex và splice để xóa)
   listStudent.splice(index, 1);
+  // Sau khi xóa xong sẽ display để hiển thị lại bảng
   display();
+  // Sau khi xóa xong sẽ cập nhật lại local
   saveToLocal();
 }
 
-// Edit
+// Chỉnh sửa thông tin sinh viên (gồm 2 bước)
+// B1: Khi ấn edit sẽ hiển thị toàn bộ thông tin của sinh viên lên table
+// B2: Từ thông tin đấy ta bắt đầu chính sửa
 function editStudent(studentId) {
+  // Khi click button edit sẽ hiển thị button Save thay cho button add
   document.querySelector("#save").style.display = "block";
   document.querySelector("#add").style.display = "none";
 
-  // Find the student with the given ID
+  // Tìm được vị trí của student và tiến hành hiển thị ra
   let index = listStudent.findIndex((student) => student.id === studentId);
   let student = listStudent[index];
 
@@ -81,6 +91,7 @@ function editStudent(studentId) {
 }
 // Save
 function saveStudent() {
+  // Khi click button save sẽ hiển thị button ADD thay cho button Save
   document.querySelector("#save").style.display = "none";
   document.querySelector("#add").style.display = "block";
 
