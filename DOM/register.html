@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Time Events</title>
+    <title>Register Form</title>
     <link
       rel="stylesheet"
       type="text/css"
@@ -13,16 +13,9 @@
   </head>
   <body>
     <div id="fui-toast"></div>
-    <!-- <h1 class="hello">Xin chao</h1>
-    <h1 class="hello">Xin chao</h1>
-    <h1 class="display">Xin chao</h1>
-    <button onclick="myFunction()">Click !!!!</button>
-    <button onclick="changeBackgroundColor()" class="click">
-      Click here!!!!
-    </button> -->
+
     <h1>Register Form</h1>
     <form onsubmit="handleSubmit(event)">
-      <!-- username, password, confirm password -->
       <div class="field">
         <label for="username">User name</label>
         <input
@@ -33,9 +26,6 @@
           maxlength="12"
           onblur="hideErrorUsername()"
         />
-        <!-- required: bắt buộc phải nhập -->
-        <!-- maxlength: số ký tự tối đa được nhập -->
-        <!-- maxlength: số ký tự tối thiếu được nhập -->
         <p class="msg-userName"></p>
       </div>
 
@@ -60,6 +50,7 @@
         />
         <p class="msg-confirmPassword"></p>
       </div>
+      <p>Bạn đã có tài khoản <a href="login.html">Đăng nhập </a></p>
       <button type="submit">Submit form</button>
     </form>
     <h2 id="form-total"></h2>
@@ -71,13 +62,11 @@
         display: none;
       }
     </style>
-    <!-- <script src="timeEvent.js"></script> -->
     <script
       type="text/javascript"
       src="https://cdn.jsdelivr.net/gh/lelinh014756/fui-toast-js@master/assets/js/toast@1.0.1/fuiToast.min.js"
     ></script>
 
-    <script src="register.js"></script>
-    <script src="localStorage.js"></script>
+    <script src="script/register.js"></script>
   </body>
 </html>
