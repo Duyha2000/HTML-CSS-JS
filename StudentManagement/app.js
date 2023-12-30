@@ -1,4 +1,3 @@
-// Mỗi lần add 1 student sẽ generate ra 1 ID mới (liên tưởng mỗi học sinh có 1 Mã số sinh viên khác nhau nên cần ID để phân biệt được)
 const uuidv4 = () => {
   return "10000000-1000-4000-8000-100000000000".replace(/[018]/g, (c) =>
     (
@@ -7,19 +6,18 @@ const uuidv4 = () => {
     ).toString(16)
   );
 };
-// Tạo 1 mảng hiển thị thông tin của sinh viên: nếu ở local chưa có học sinh nào thì ta sẽ dùng ?? để hiển thị ra mảng rỗng []
-// nếu đã có hiển thị thông tin mảng đấy ra để dùng vòng lặp for kết hợp innerHtml hiển thị ra giao diện
+// Mảng lưu trữ thông tin học sinh
 let listStudent = JSON.parse(localStorage.getItem("listStudent")) ?? [];
-// Truy xuất các phần tử trong DOM
+// Truy xuất DOM
 let fullName = document.querySelector("#fullName");
 let date = document.querySelector("#date");
 let gender = document.querySelector("#gender");
 let classmate = document.querySelector("#classmate");
 let image = document.querySelector("#image");
 
-// Hiển thị sinh viên ra ngoài giao diện
+// Hiển thị các số từ 1 -> 5 bằng innerHTML
 function display() {
-  let html = ``;
+  let html = " ";
   for (let i = 0; i < listStudent.length; i++) {
     html += `
     <tr>
@@ -27,22 +25,21 @@ function display() {
         <td>${listStudent[i].date}</td>
         <td>${listStudent[i].gender}</td>
         <td>${listStudent[i].classmate}</td>
-        <td><img id="img1" style="width:200px;height:200px; object-fit:cover" src="${listStudent[i].image}"></td>
-        <td><button onclick="editStudent('${listStudent[i].id}')">EDIT</button></td>
+        <td>${listStudent[i].image}</td>
+        <td><button onclick="editStudent('${listStudent[i].id}')">Edit</button></td>
         <td><button onclick="deleteStudent('${listStudent[i].id}')">DELETE</button></td>
-    </tr>
-`;
+    </tr>  
+     `;
   }
   document.querySelector("#tbody1").innerHTML = html;
-  // Reset form sau khi submit thành công
+
   fullName.value = "";
   date.value = "";
   gender.value = "";
   classmate.value = "";
   image.value = "";
 }
-
-// Thêm sinh viên: mỗi sinh viên là 1 object(đối tượng), nên sau khi input sẽ lấy value các thuộc tính và push vào mảng Student
+// Thêm học sinh
 function addStudent() {
   listStudent.push({
     id: uuidv4(),
@@ -52,53 +49,41 @@ function addStudent() {
     classmate: classmate.value,
     image: image.value,
   });
-  // Sau khi xóa xong sẽ display để hiển thị lại bảng
   display();
-  // Sau khi xóa xong sẽ cập nhật lại local
-  saveToLocal();
+  saveToLocalStorage();
 }
 
-// Delete 1 học sinh
+// findIndex: trả về phần tử đầu tiên thỏa mãn điều kiện -> không có trả về -1
+// Xóa học sinh (findIndex + splice)
 function deleteStudent(studentId) {
-  // Tìm vị trí của phần tử trong mảng (dùng findIndex)
   const index = listStudent.findIndex((student) => student.id === studentId);
-  // Xóa 1 sinh viên (hay kết hợp giữa findIndex và splice để xóa)
   listStudent.splice(index, 1);
-  // Sau khi xóa xong sẽ display để hiển thị lại bảng
+  saveToLocalStorage();
   display();
-  // Sau khi xóa xong sẽ cập nhật lại local
-  saveToLocal();
 }
-
-// Chỉnh sửa thông tin sinh viên (gồm 2 bước)
-// B1: Khi ấn edit sẽ hiển thị toàn bộ thông tin của sinh viên lên table
-// B2: Từ thông tin đấy ta bắt đầu chính sửa
+// CHỉnh sửa thông tin học sinh
+// B1: Khi click vào edit sẽ hiển thị tất cả thông tin học sinh lên table -> tahy button add = button save
 function editStudent(studentId) {
-  // Khi click button edit sẽ hiển thị button Save thay cho button add
-  document.querySelector("#save").style.display = "block";
   document.querySelector("#add").style.display = "none";
-
-  // Tìm được vị trí của student và tiến hành hiển thị ra
-  let index = listStudent.findIndex((student) => student.id === studentId);
+  document.querySelector("#save").style.display = "block";
+  // TÌm được học sinh đấy nằm ở vị trí nào = findIndex
+  const index = listStudent.findIndex((student) => student.id === studentId);
   let student = listStudent[index];
-
   fullName.value = student.fullName;
   date.value = student.date;
   gender.value = student.gender;
   classmate.value = student.classmate;
   image.value = student.image;
-  document.querySelector("#save").value = studentId;
+  document.querySelector("#save").value = studentId; // 3
 }
-// Save
+
+// B2: Edit thông tin của form -> click button save -> dữ liệu sẽ được cập nhật lại và reset lại form
 function saveStudent() {
-  // Khi click button save sẽ hiển thị button ADD thay cho button Save
   document.querySelector("#save").style.display = "none";
   document.querySelector("#add").style.display = "block";
-
   let studentId = document.querySelector("#save").value;
-  let index = listStudent.findIndex((student) => student.id === studentId);
-
-  // Update the student information based on the ID
+  // 3
+  const index = listStudent.findIndex((student) => student.id === studentId);
   listStudent[index] = {
     id: studentId,
     fullName: fullName.value,
@@ -107,13 +92,10 @@ function saveStudent() {
     classmate: classmate.value,
     image: image.value,
   };
-
+  saveToLocalStorage();
   display();
-  saveToLocal();
 }
-
-// local
-function saveToLocal() {
+function saveToLocalStorage() {
   localStorage.setItem("listStudent", JSON.stringify(listStudent));
 }
 

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hackathon</title>
+  </head>
+  <form class="w-[1000px] mx-auto mt-[20px]" onsubmit="handleSubmit(event)">
+    <div class="list-card grid grid-cols-5 gap-[20px]">
+      <div class="item">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/1200px-Mastercard-logo.svg.png"
+          class=""
+          alt=""
+        />
+      </div>
+      <div class="item">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/1200px-Mastercard-logo.svg.png"
+          class=""
+          alt=""
+        />
+      </div>
+      <div class="item">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/1200px-Mastercard-logo.svg.png"
+          class=""
+          alt=""
+        />
+      </div>
+      <div class="item">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/1200px-Mastercard-logo.svg.png"
+          class=""
+          alt=""
+        />
+      </div>
+
+      <div class="item">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/1200px-Mastercard-logo.svg.png"
+          class=""
+          alt=""
+        />
+      </div>
+    </div>
+
+    <div class="flex items-start gap-5 w-[450px] mb-10">
+      <div class="flex flex-col gap-5">
+        <label for="date">Date:</label>
+        <input
+          type="date"
+          id="date"
+          name="date"
+          pattern="\d{2}/\d{2}/\d{4}"
+          class="w-48 h-8 border-gray-400 border rounded p-1"
+        />
+        <span id="dateError" class="text-red-500 h-5"></span>
+      </div>
+      <div class="flex flex-col gap-5">
+        <label for="cvc">CVC:</label>
+        <input
+          type="text"
+          id="cvc"
+          name="cvc"
+          pattern="\d{3}"
+          class="w-48 h-8 border-gray-400 border rounded p-1"
+        />
+        <span id="cvcError" class="text-red-500 h-5"></span>
+      </div>
+    </div>
+
+    <div class="flex flex-col items-start">
+      <button
+        class="p-5 bg-[gray] border-none text=[#ffffff] font-semibold cursor-pointer transition-all hover:opacity-70 uppercase"
+        type="submit"
+      >
+        Submit form
+      </button>
+    </div>
+    <div id="display"></div>
+  </form>
+  <body>
+    <style>
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 20px;
+        background-color: #f0f0f0;
+        border-radius: 10px;
+      }
+
+      .item {
+        padding: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .item.selected {
+        border: 2px solid blue;
+        background-color: lightblue;
+      }
+
+      #date,
+      #cvc {
+        width: 200px;
+        height: 30px;
+        border-radius: 5px;
+        border: 1px solid gray;
+        padding: 5px;
+      }
+
+      #date:hover,
+      #cvc:hover {
+        border-color: blue;
+      }
+
+      button {
+        padding: 10px 20px;
+        background-color: gray;
+        color: white;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border-radius: 5px;
+      }
+
+      button:hover {
+        background-color: darkgray;
+      }
+
+      button:active {
+        background-color: black;
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
