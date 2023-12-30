@@ -83,6 +83,61 @@
   </form>
   <body>
     <style>
+      .toast {
+        position: fixed;
+        top: 2%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 10px 20px;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.7);
+        border-radius: 5px;
+        z-index: 1000;
+        transition: opacity 0.5s;
+        animation: fadeIn 0.5s forwards;
+      }
+
+      .toast.success {
+        background-color: green;
+      }
+
+      .toast.error {
+        background-color: red;
+      }
+
+      .progress-bar {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 5px;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.5);
+        animation: progressBar 3.5s linear forwards;
+      }
+
+      @keyframes progressBar {
+        from {
+          width: 100%;
+        }
+        to {
+          width: 0;
+        }
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      .toast.success {
+        background-color: green;
+      }
+
+      .toast.error {
+        background-color: red;
+      }
       form {
         display: flex;
         flex-direction: column;
