@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <style>
+      body {
+        font-family: "Open Sans", sans-serif;
+      }
+      .form-input {
+        background-color: #ffffff;
+        border-radius: 12px;
+        border: none;
+        padding: 15px;
+        margin-bottom: 10px;
+      }
+      .form-button {
+        background-color: #4f46e5;
+        border-radius: 22px;
+        padding: 15px;
+        width: 100%;
+        color: white;
+        font-weight: 700;
+        border: none;
+        margin-top: 20px;
+      }
+      .form-button:hover {
+        background: #4338ca;
+      }
+      button {
+        background-color: #8589e4 !important;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 flex items-center justify-center h-screen">
+    <div class="bg-white p-10 rounded-lg shadow-md w-full max-w-sm">
+      <h1 class="text-4xl text-indigo-600 font-bold mb-6 text-center">
+        LocStar
+      </h1>
+      <form id="registrationForm">
+        <input
+          type="text"
+          id="username"
+          placeholder="Full Name"
+          class="form-input w-full"
+          oninput="validateUsername()"
+        />
+        <div id="errorUsername" style="color: red"></div>
+
+        <input
+          type="email"
+          id="email"
+          placeholder="Email"
+          class="form-input w-full"
+          oninput="validateEmail()"
+        />
+        <div id="errorEmail" style="color: red"></div>
+
+        <input
+          type="password"
+          id="password"
+          placeholder="Password"
+          class="form-input w-full"
+          oninput="validatePassword()"
+        />
+        <div id="errorPassword" style="color: red"></div>
+
+        <input
+          type="password"
+          id="confirmPassword"
+          placeholder="Confirm Password"
+          class="form-input w-full"
+          oninput="validateConfirmPassword()"
+        />
+        <div id="errorConfirmPassword" style="color: red"></div>
+
+        <button type="submit" class="form-button">Create Account</button>
+      </form>
+      <p class="text-center text-sm mt-4">
+        By clicking "Create Account" you agree to our <br />
+        <a href="#" class="text-indigo-600 hover:text-indigo-800"
+          >terms and privacy policy.</a
+        >
+      </p>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
