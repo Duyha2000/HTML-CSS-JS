@@ -2,15 +2,71 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Quizz</title>
+    <title>LaslesVPN</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <style>
+      body {
+        font-family: "Open Sans", sans-serif;
+      }
+      .header-icon {
+        width: 24px;
+        height: 24px;
+      }
+    </style>
   </head>
-  <body>
-    <p class="rikkei">I love Rikkei</p>
-    <p class="rikkei">I love Rikkei</p>
-    <p class="rikkei">I love Rikkei</p>
+  <body class="bg-white">
+    <header class="container mx-auto px-6 py-4">
+      <nav class="flex justify-between items-center">
+        <a href="#" class="text-3xl font-bold text-red-600"
+          >Lasles<span class="text-black">VPN</span></a
+        >
+        <div class="flex space-x-6">
+          <a href="#" class="text-gray-600 hover:text-gray-800">About</a>
+          <a href="#" class="text-gray-600 hover:text-gray-800">Features</a>
+          <a href="#" class="text-gray-600 hover:text-gray-800">Pricing</a>
+          <a href="#" class="text-gray-600 hover:text-gray-800">Testimonials</a>
+          <a href="#" class="text-gray-600 hover:text-gray-800">Help</a>
+        </div>
+        <div class="flex space-x-4">
+          <a href="#" class="text-gray-600 hover:text-gray-800">Sign In</a>
+          <a href="#" class="bg-red-500 text-white px-4 py-2 rounded"
+            >Sign Up</a
+          >
+        </div>
+      </nav>
+    </header>
 
-    <script src="script.js"></script>
+    <main class="container mx-auto px-6 py-16 text-center">
+      <h1 class="text-5xl font-bold">
+        Want anything to be easy with
+        <span class="text-red-600">LaslesVPN</span>.
+      </h1>
+      <p class="text-gray-500 my-6">
+        Provide a network for all your needs with ease and fun using LaslesVPN
+        discover interesting features from us.
+      </p>
+      <a href="#" class="bg-red-500 text-white px-8 py-3 rounded shadow-lg"
+        >Get Started</a
+      >
+    </main>
+
+    <footer class="container mx-auto px-6 py-4">
+      <div class="flex justify-center">
+        <img
+          src="https://placehold.co/300x200.png"
+          alt="Illustration of a person using a laptop with graphics floating around, representing VPN features"
+          class="mx-auto"
+        />
+      </div>
+    </footer>
   </body>
 </html>
