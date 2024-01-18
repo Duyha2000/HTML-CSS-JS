@@ -4,53 +4,23 @@ let age: number = 30;
 console.log(age);
 
 // Interface trong Typescript là một cấu trúc dữ liệu mà nó chỉ định kiểu dữ liệu và các thuộc tính bắt buộc của đối tượng.
-interface Student {
-  id: number | string;
-  firstName: string;
-  lastName: string;
-  age: number;
-}
+// interface Student {
+//   id: number | string;
+//   firstName: string;
+//   lastName: string;
+//   age: number;
+// }
 // Object trong Typescript là một cấu trúc dữ liệu mà nó chỉ định kiểu dữ liệu và các thuộc tính bắt buộc của đối tượng.
-const student: Student = {
-  id: 444444444,
-  firstName: "John",
-  lastName: "Smith",
-  age: 30,
-};
+// const student: Student = {
+//   id: 444444444,
+//   firstName: "John",
+//   lastName: "Smith",
+//   age: 30,
+// };
 // Array trong Typescript là một cấu trúc dữ liệu mà nó chỉ định kiểu dữ liệu và các thuộc tính bắt buộc của đối tượng.
 const cart2: string[] = ["apple", "orange", "banana"];
 // Cú pháp khác: const cart3: Array<string> = ["apple", "orange", "banana"];
-interface Product {
-  id: number;
-  name: string;
-  price: number;
-  qty: number;
-  amount: number;
-}
 
-const cart: Product[] = [
-  {
-    id: 1,
-    name: "apple",
-    price: 10,
-    qty: 5,
-    amount: 50,
-  },
-  {
-    id: 2,
-    name: "orange",
-    price: 5,
-    qty: 5,
-    amount: 25,
-  },
-  {
-    id: 3,
-    name: "banana",
-    price: 3,
-    qty: 5,
-    amount: 15,
-  },
-];
 // Function type trong Typescript là một cấu trúc dữ liệu mà nó chỉ định kiểu dữ liệu và các thuộc tính bắt buộc của đối tượng.
 const sum = (a: number, b: string): string => {
   return a + b;
@@ -143,3 +113,77 @@ switch (choice) {
     break;
 }
 console.log(result);
+
+let height: number = parseInt(prompt("Enter your height: ") ?? "");
+let weight: number = parseInt(prompt("Enter your weight: ") ?? "");
+let bmi: number = weight / (height * height);
+let result2: string = "";
+if (bmi < 18.5) result2 = "Underweight";
+else if (bmi >= 18.5 && bmi < 25) result2 = "Normal";
+else if (bmi >= 25 && bmi < 30) result2 = "Overweight";
+else result2 = "Obese";
+console.log(result2);
+//
+const arr2: Array<number> = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// findIndex
+const index: number = arr2.findIndex((item) => item === 5);
+console.log(index);
+// find
+const item: number | undefined = arr2.find((item) => item === 5);
+console.log(item);
+
+//
+interface Product {
+  id: number;
+  name: string;
+  price: number;
+  qty: number;
+  amount: number;
+}
+
+const cart: Product[] = [
+  {
+    id: 1,
+    name: "apple",
+    price: 10,
+    qty: 5,
+    amount: 50,
+  },
+  {
+    id: 2,
+    name: "orange",
+    price: 5,
+    qty: 5,
+    amount: 25,
+  },
+  {
+    id: 3,
+    name: "banana",
+    price: 3,
+    qty: 5,
+    amount: 15,
+  },
+];
+// Map cart array render UI
+const renderUI = (cart: Product[]) => {
+  let html: string = "";
+  cart.forEach((item) => {
+    html += `<li>${item.name}</li>`;
+  });
+  return html;
+};
+// display primeNumber
+const isPrimeNumber = (n: number): boolean => {
+  if (n < 2) return false;
+  for (let i = 2; i <= Math.sqrt(n); i++) if (n % i === 0) return false;
+  return true;
+};
+
+const displayPrimeNumber = (n: number): void => {
+  for (let i = 0; i <= n; i++) if (isPrimeNumber(i)) console.log(i);
+};
+displayPrimeNumber(100);
+// Hien thi so nguyen to tu 1 den 100
+// Khai báo đối tượng Student chứa các thông tin sau: id: number, name: string, age: number, address: string
+// Khai báo mảng students chứa các đối tượng Student
+// Viết hàm render ra UI danh sách sinh viên
