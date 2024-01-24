@@ -1,176 +1,91 @@
-import React, { useState } from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import "./style/style.scss";
-
-// const items: IItems[] = [
-//   {
-//     id: 1,
-//     imgSrc:
-//       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlDEQWdNMlNxYKT9yULNAak2uu1vxToe_0qXi0y_lTwQ&s",
-//     title: "Title 1",
-//     description: "Description 1",
-//   },
-//   {
-//     id: 2,
-//     imgSrc:
-//       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlDEQWdNMlNxYKT9yULNAak2uu1vxToe_0qXi0y_lTwQ&s",
-//     title: "Title 2",
-//     description: "Description 2",
-//   },
-//   {
-//     id: 3,
-//     imgSrc:
-//       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlDEQWdNMlNxYKT9yULNAak2uu1vxToe_0qXi0y_lTwQ&s",
-//     title: "Title 3",
-//     description: "Description 3",
-//   },
-//   {
-//     id: 4,
-//     imgSrc:
-//       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlDEQWdNMlNxYKT9yULNAak2uu1vxToe_0qXi0y_lTwQ&s",
-//     title: "Title 4",
-//     description: "Description 4",
-//   },
-// ];
-
+// callAPI, tương tác với phần tử DOM, setTimeOut, setInterval, ...
 const App: React.FC = () => {
-  const [name, setName] = useState<string>("");
-  const [age, setAge] = useState<number>(0);
-  const [email, setEmail] = useState<string>("");
-  const [country, setCountry] = useState<string>("Bangladesh");
-  const [date, setDate] = useState<string>("");
-  const [checked, setChecked] = useState("Male");
+  // useState
+  useEffect(() => {
+    // code here
+    // TH1: không có dependency array => chạy mỗi lần render
+    // TH2: dependency array rỗng => chạy 1 lần duy nhất: call API
+    // TH3: dependency array có giá trị => chạy khi giá trị thay đổi: thường làm phân trang
+  }, []);
+  // useState
+  const [count, setCount] = useState<number>(0);
+  const handleIncrease = () => {
+    setCount(count + 1);
+  };
+  const handleDecrease = () => {
+    setCount(count - 1);
+  };
+  // const [isShowDropdown, setIsShowDropdown] = useState<boolean>(false);
+  // const handleDropdown = () => {
+  //   setIsShowDropdown(!isShowDropdown);
+  // };
+  // get - post - put - delete
+  // const [todos, setTodos] = useState<[]>([]);
 
-  const handleInputRadio = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setChecked(e.target.value);
-  };
+  // useEffect(() => {
+  //   const loadPosts = async () => {
+  //     const response = await axios.get(
+  //       `https://jsonplaceholder.typicode.com/todos`
+  //     );
+  //     console.log(response.data, "aaaa");
+  //     setTodos(response.data);
+  //   };
+  //   loadPosts();
+  // }, []);
+  // https://jsonplaceholder.typicode.com/posts
+  const [posts, setPosts] = useState<[]>([]);
+  // GET - POST - PUT - DELETE
+  // GET: lấy dữ liệu về (hiển thị dữ liệu)
+  // POST: tạo mới dữ liệu
+  // PUT: cập nhật dữ liệu
+  // DELETE: xóa dữ liệu
+  // setTodos(lỗi dữ liệu về)
+  useEffect(() => {
+    const loadPosts = async () => {
+      try {
+        const response = await axios.get(
+          `https://jsonplaceholder.typicode.com/posts`
+        );
+        console.log(response.data, "AAA");
+        setPosts(response.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    loadPosts();
+  }, []);
 
-  const handleInputName = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setName(e.target.value);
-  };
-  const handleInputAge = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setAge(Number(e.target.value));
-  };
-  const handleInputEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setEmail(e.target.value);
-  };
-  const handleSelectCountry = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setCountry(e.target.value);
-  };
-  const handleInputDate = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setDate(e.target.value);
-  };
+  // Tương tác với DOM
+  // useEffect(() => {
+  //   const item = document.querySelector(".item") as HTMLElement;
+  //   if (item) item.style.color = "red";
+  // }, []);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log(name, "Name");
-    console.log(age, "Age");
-    console.log(email, "Email");
-    console.log(country, "Country");
-    console.log(date, "Date");
-    console.log(checked, "Checked");
-    // Reset form trên giao diện
-    (e.target as HTMLFormElement).reset();
-    setName("");
-    setAge(0);
-    setEmail("");
-    setCountry("Bangladesh");
-    setDate("");
-    setChecked("Male");
-  };
   return (
-    <form onSubmit={handleSubmit}>
-      <h1>Student Form</h1>
-      <div className="student-form">
-        <input
-          name="name"
-          type="text"
-          placeholder="Enter your name"
-          onChange={handleInputName}
-        />
-
-        <input
-          name="age"
-          type="number"
-          placeholder="Enter your age"
-          onChange={handleInputAge}
-        />
-
-        <input
-          type="email"
-          placeholder="Enter your email"
-          name="email"
-          onChange={handleInputEmail}
-        />
-
-        <div className="field-list">
-          <div className="field">
-            <label htmlFor="male">Male</label>
-            <input
-              type="radio"
-              id="male"
-              name="male"
-              value="male"
-              checked={checked === "male"}
-              onChange={handleInputRadio}
-            />
-          </div>
-
-          <div className="field">
-            <label htmlFor="female">Female</label>
-            <input
-              type="radio"
-              id="female"
-              name="female"
-              value="female"
-              checked={checked === "female"}
-              onChange={handleInputRadio}
-            />
-          </div>
-
-          <div className="field">
-            <label htmlFor="other">Other</label>
-            <input
-              type="radio"
-              id="other"
-              name="other"
-              value="other"
-              checked={checked === "other"}
-              onChange={handleInputRadio}
-            />
-          </div>
-        </div>
-
-        <div className="field">
-          <label htmlFor="country">Country</label>
-          <select name="country" id="country" onChange={handleSelectCountry}>
-            <option value="Bangladesh">Bangladesh</option>
-            <option value="India">India</option>
-            <option value="Pakistan">Pakistan</option>
-          </select>
-        </div>
-
-        <div className="field">
-          <label htmlFor="dateOfBirth">Date of birth</label>
-          <input
-            type="date"
-            id="dateOfBirth"
-            onChange={handleInputDate}
-            name="date"
-          />
-        </div>
-        <button type="submit">Submit</button>
-      </div>
-    </form>
+    <div>
+      <div className="item">Xin chao</div>
+      {posts.map(({ id, title }: { id: number; title: string }) => (
+        <div key={id}>{title}</div>
+      )) ?? []}
+      <button onClick={handleDecrease}>-</button>
+      {/* {todos.map(({ id, title }: { id: number; title: string }) => (
+        <div key={id}>{title}</div>
+      ))} */}
+      <span>{count}</span>
+      <button onClick={handleIncrease}>+</button>
+      {/* <button onClick={handleDropdown}>Show dropdown!!!!</button>
+      {isShowDropdown && (
+        <ul>
+          <li>Xin chao</li>
+          <li>Xin chao</li>
+          <li>Xin chao</li>
+        </ul>
+      )} */}
+    </div>
   );
 };
 
 export default App;
-// <div className="item-container">
-//   {items.map((item) => (
-//     <div className="item" key={item.id}>
-//       <img src={item.imgSrc} alt="Item" />
-//       <h2>{item.title}</h2>
-//       <p>{item.description}</p>
-//     </div>
-//   ))}
-// </div>
