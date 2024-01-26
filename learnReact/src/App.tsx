@@ -1,12 +1,20 @@
-import React from "react";
+import React, {
+  CSSProperties,
+  ReactNode,
+  Suspense,
+  useEffect,
+  useState,
+} from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import About from "../pages/About";
-import HomePage from "../pages/HomePage";
-import Register from "../pages/Register";
-import Login from "../pages/Login";
-import RegisterFormik from "../pages/RegisterFormik";
+
+const About = React.lazy(() => import("../pages/About"));
+const HomePage = React.lazy(() => import("../pages/HomePage"));
+// const RegisterFormik = React.lazy(() => import("../pages/RegisterFormik"));
+const Register = React.lazy(() => import("../pages/Register"));
+const Login = React.lazy(() => import("../pages/Login"));
+const Form = React.lazy(() => import("../pages/Form"));
 
 // callAPI, tương tác với phần tử DOM, setTimeOut, setInterval, ...
 const App: React.FC = () => {
@@ -72,10 +80,50 @@ const App: React.FC = () => {
   // }, []);
   // window.location.href = "https://google.com";
 
+  interface SuspenseLayoutProps {
+    children: ReactNode;
+  }
+
+  const ProgressBar = () => {
+    const [progress, setProgress] = useState<number>(0);
+
+    useEffect(() => {
+      const interval = setInterval(() => {
+        // Simulate progress increment
+        setProgress((prevProgress) =>
+          prevProgress < 100 ? prevProgress + 1 : 100
+        );
+      }, 50);
+
+      return () => clearInterval(interval);
+    }, []);
+
+    // Use CSSProperties type for the style object
+    const style: CSSProperties = {
+      width: `${progress}%`,
+      height: "5px",
+      backgroundColor: "red",
+      position: "fixed",
+      top: 0,
+      left: 0,
+      transition: "all 0.5s linear",
+    };
+
+    return <div style={style}></div>;
+  };
+
+  const SuspenseLayout: React.FC<SuspenseLayoutProps> = ({ children }) => {
+    return <Suspense fallback={<ProgressBar />}>{children}</Suspense>;
+  };
+
   const router = createBrowserRouter([
     {
       path: "/", // Đường dẫn
-      element: <HomePage />,
+      element: (
+        <SuspenseLayout>
+          <HomePage />
+        </SuspenseLayout>
+      ),
     },
     {
       path: "/about",
@@ -98,9 +146,14 @@ const App: React.FC = () => {
       element: <div>404 Not Found</div>,
     },
     {
-      path: "/register-formik",
-      element: <RegisterFormik />,
+      path: "/form",
+      element: <Form />,
     },
+
+    // {
+    //   path: "/register-formik",
+    //   element: <RegisterFormik />,
+    // },
   ]);
 
   return (
