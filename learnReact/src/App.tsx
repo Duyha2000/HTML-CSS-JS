@@ -1,7 +1,13 @@
 import React from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import HomePage from "./pages/HomePage";
-import About from "./pages/About";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import About from "../pages/About";
+import HomePage from "../pages/HomePage";
+import Register from "../pages/Register";
+import Login from "../pages/Login";
+import RegisterFormik from "../pages/RegisterFormik";
+
 // callAPI, tương tác với phần tử DOM, setTimeOut, setInterval, ...
 const App: React.FC = () => {
   // // useState
@@ -79,6 +85,22 @@ const App: React.FC = () => {
       path: "/products",
       element: <About />,
     },
+    {
+      path: "/register",
+      element: <Register />,
+    },
+    {
+      path: "/login",
+      element: <Login />,
+    },
+    {
+      path: "*",
+      element: <div>404 Not Found</div>,
+    },
+    {
+      path: "/register-formik",
+      element: <RegisterFormik />,
+    },
   ]);
 
   return (
@@ -102,7 +124,10 @@ const App: React.FC = () => {
     //     </ul>
     //   )} */}
     // </div>
-    <RouterProvider router={router} />
+    <div>
+      <RouterProvider router={router} />
+      <ToastContainer />
+    </div>
   );
 };
 
