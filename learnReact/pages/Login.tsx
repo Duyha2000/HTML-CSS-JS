@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "./style.scss";
+import { TextField } from "@mui/material";
 const Login = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
@@ -41,6 +42,8 @@ const Login = () => {
   return (
     <form onSubmit={handleSubmit}>
       <h2>Form Login</h2>
+      <TextField id="outlined-basic" label="Outlined" variant="outlined" />
+
       <div className="field">
         <label htmlFor="email">Enter your email:</label>
         <input
