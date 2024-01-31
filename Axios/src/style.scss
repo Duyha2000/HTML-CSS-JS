@@ -59,3 +59,27 @@ a {
     object-position: center;
   }
 }
+.button-container {
+  max-width: 1200px;
+  display: flex;
+  gap: 10px;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  button {
+    margin: 0 auto;
+    display: flex;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid #000;
+    background-color: #fff;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    &:hover {
+      background-color: #000;
+      color: #fff;
+    }
+  }
+}
