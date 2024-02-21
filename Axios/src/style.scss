@@ -38,6 +38,22 @@ a {
   color: inherit;
 }
 
+.inputfile {
+  display: none;
+}
+
+.fileLabel {
+  display: inline-block;
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+}
+
+.fileLabel:hover {
+  background-color: #45a049;
+}
+
 .products-container {
   display: flex;
   flex-wrap: wrap;
@@ -82,4 +98,51 @@ a {
       color: #fff;
     }
   }
+}
+
+/* YourComponent.css */
+
+/* Form Styles */
+form {
+  margin-bottom: 20px;
+}
+
+input {
+  padding: 8px;
+  margin-right: 10px;
+}
+
+button {
+  padding: 8px 12px;
+  cursor: pointer;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+}
+
+/* Product Details Styles */
+.container {
+  width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+img {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.content {
+  transform: rotate3d(0);
+  transform: rotate3d(0);
 }

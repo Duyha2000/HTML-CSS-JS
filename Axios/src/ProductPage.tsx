@@ -14,7 +14,7 @@ interface Products {
   image: string;
 }
 
-const PaginationAPI = () => {
+const ProductPage = () => {
   const navigate = useNavigate();
   const [search, setSearch] = useState("");
   const NUMBER_OF_PRODUCTS_PER_PAGE = 20;
@@ -114,11 +114,11 @@ const PaginationAPI = () => {
         {products.map((product) => (
           <div
             key={product._id}
-            onClick={() => {
-              navigate(`/pagination/${product._id}`);
-            }}
             style={{
               cursor: "pointer",
+            }}
+            onClick={() => {
+              navigate(`/products/${product._id}`);
             }}
           >
             <img src={product.image} alt={product._id} />
@@ -143,4 +143,4 @@ const PaginationAPI = () => {
   );
 };
 
-export default PaginationAPI;
+export default ProductPage;
