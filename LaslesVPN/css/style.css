@@ -1,0 +1,54 @@
+body {
+  font-family: "Rubik", sans-serif;
+}
+.wrapper {
+  width: 1440px;
+  margin: 0 auto;
+}
+.container {
+  width: 1140px;
+  /* căn giữa thẻ block */
+  margin: 0 auto;
+  /* căn giữa 1 đoạn text dùng text-align:center */
+}
+.header-item {
+  list-style: none;
+}
+.header-menu {
+  display: flex;
+  gap: 40px;
+}
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header-right {
+  display: flex;
+  gap: 20px;
+}
+
+#hero {
+  display: flex;
+  align-items: center;
+  margin-top: 80px;
+  gap: 14px;
+}
+.hero-title {
+  font-weight: 500;
+  font-size: 50px;
+  line-height: 70px;
+}
+.hero-title b {
+  font-weight: 700;
+}
+.hero-description {
+  font-size: 16px;
+  line-height: 30px;
+  font-weight: 400;
+  color: #4f5665;
+  margin-top: 20px;
+}
+.hero-description b {
+  font-weight: 500;
+}
