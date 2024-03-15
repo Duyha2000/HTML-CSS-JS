@@ -1,0 +1,75 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+input,
+select,
+textarea {
+  background-color: transparent;
+  outline: none;
+}
+button {
+  cursor: pointer;
+  background-color: transparent;
+  outline: none;
+  border: 0;
+}
+body {
+  min-height: 100vh;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+}
+
+.container {
+  width: 1140px; /* Xác định được độ rộng nằm ở giữa*/
+  margin: auto;
+}
+li {
+  list-style: none; /* Xóa dấu chấm tròn */
+}
+a {
+  text-decoration: none; /* Xóa gạch chân */
+  color: black;
+}
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+.header-list {
+  display: flex;
+  align-items: center;
+  /* Gap: tạo khoảng cách giữa các phần tử con */
+  gap: 40px;
+}
+.header-btn-group {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.button {
+  width: 20px !important;
+  height: 20px !important;
+  border-radius: 100% !important;
+  background-color: red !important;
+}
