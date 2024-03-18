@@ -24,6 +24,139 @@
       Change color
     </div>
     <!-- Nhúng link script vào trang web -->
-    <script src="app.js"></script>
+    <!-- <script src="app.js"></script> -->
+    <script>
+      // const n = parseInt(prompt("Nhập số nguyên n"));
+      // Cách 1: Sử dụng If - else:
+      const result = "";
+      // if (n % 2 == 0) result = `Even number`;
+      // else result = `Odd number`;
+      // console.log(result);
+      // Cách 2: Sư dụng toán tử 3 ngôi: condition ? true : false
+      // result = n % 2 === 0 ? "Even number" : "Odd number";
+      // console.log(result);
+
+      // Bài 2:
+      // const person1 = prompt("Enter the salary of person1: ");
+      // const person2 = prompt("Enter the salary of person2: ");
+      // result = person1 > person2 ? "person1" : "person2";
+      // console.log(result);
+      // Bài 3: A -> uppcase
+      // a -> lowercase
+      // @ -> not an alphabet
+
+      // var char = prompt("Nhập vào một ký tự: ");
+      // if (char >= "A" && char <= "Z") {
+      //   console.log(char + " là chữ cái viết hoa");
+      // } else if (char >= "a" && char <= "z") {
+      //   console.log(char + " là chữ cái viết thường");
+      // } else {
+      //   console.log(char + " không phải là chữ cái");
+      // }
+      // Anh Tính
+      // var a = parseInt(prompt("Nhap A:"));
+      // console.log(typeof a, "aaa");
+      // var b = parseInt(prompt("Nhap B:"));
+      // var c = parseInt(prompt("Nhap C:"));
+      // denta = b * b - 4 * a * c;
+      // if (denta > 0) {
+      //   console.log(`The equation has two real solutions!`);
+      // } else if (denta < 0) {
+      //   console.log(`The equation has no solution!`);
+      // } else {
+      //   console.log(`The equation has one real solution!`);
+      // }
+      // Mei Zhen Ng Mỹ Trân
+      // const a = parseInt(prompt("Nhập a"));
+      // const b = parseInt(prompt("Nhập b"));
+      // const c = parseInt(prompt("Nhập c"));
+      // const delta = b * b - 4 * a * c;
+      // if (delta > 0) console.log("The equation has two real solutions!");
+      // else if (delta === 0) {
+      //   console.log("The equation has one real solution!");
+      // } else {
+      //   console.log("The equation has no solution!");
+      // }
+      // Quang
+      // let a = parseInt(prompt(`nhap a`));
+      // let b = parseInt(prompt(`nhap b`));
+      // let c = parseInt(prompt(`nhap c`));
+      // let delta = b * b - 4 * a * c;
+
+      // if (delta > 0)
+      //   console.log(
+      //     `x1 = (${-b} + ${Math.sqrt(
+      //       delta
+      //     )}) / (2 * ${a}) và x2 = (${-b} - ${Math.sqrt(delta)}) / (2 * ${a})`
+      //   );
+      // else if ((delta = 0)) console.log(` x = ${-b / (2 * a)} `);
+      // else {
+      //   console.log(` PT vô nghiệm`);
+      // }
+      // const a = parseInt(prompt("Nhập a"));
+      // const b = parseInt(prompt("Nhập b"));
+      // const c = parseInt(prompt("Nhập c"));
+      // let delta = b * b - 4 * a * c;
+
+      // if (delta > 0) {
+      //   const x1 = (-b + Math.sqrt(delta)) / (2 * a);
+      //   const x2 = (-b - Math.sqrt(delta)) / (2 * a);
+      //   console.log(
+      //     `Phương trình có hai nghiệm thực là: x1 = ${x1}, x2 = ${x2}`
+      //   );
+      // } else if (delta === 0) {
+      //   const x = -b / (2 * a);
+      //   console.log(`Phương trình có một nghiệm thực là: x = ${x}`);
+      // } else {
+      //   console.log("The equation has no solution!");
+      // }
+
+      // let year = parseInt(prompt(`nhập năm `));
+      // if ((year % 4 === 0 && year % 100 !== 0) || year % 400 == 0) {
+      //   console.log(`${year} laf nam nhuan`);
+      // } else {
+      //   console.log(`${year} khong phai nam nhuom`);
+      // }
+
+      // Switch: thay đổi - case: trường hợp:
+      let choice = prompt("Nhập lựa chọn của bạn");
+      // Khi đến 1 đèn giao thông, gặp 3 đèn đỏ, xanh vàng và sẽ có các lựa chọn
+
+      switch (choice) {
+        case "RED_FLAG":
+          console.log("Dừng lại");
+          break;
+        case "GREEN_FLAG":
+          console.log("Đi tiếp");
+          break;
+        case "YELLOW_FLAG":
+          console.log("Đi chậm");
+          break;
+        default:
+          console.log("Bạn đã bị công an bắt!!!");
+          break;
+      }
+
+      const a = parseInt(prompt("Nhập a"));
+      const c = prompt("Nhập phép toán + - * /");
+      const b = parseInt(prompt("Nhập b"));
+      switch (c) {
+        case "+":
+          console.log(a + b);
+          break;
+        case "-":
+          console.log(a - b);
+          break;
+        case "*":
+          console.log(a * b);
+          break;
+        case "/":
+          console.log(a / b);
+          break;
+        default:
+          console.log("lỗi");
+          break;
+      }
+    </script>
   </body>
 </html>

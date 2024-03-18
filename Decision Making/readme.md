@@ -12,38 +12,47 @@ Cho n = 151, Kết quả nên in ra là "Odd number"
 
 Output: Nếu người thứ nhất có mức lương cao nhất, chương trình sẽ in ra person1 lên trên màn hình cửa sổ dòng lệnh.
 Nếu người thứ 2 có mức lương cao nhất, chương trình sẽ in ra person2 lên trên màn hình cửa sổ dòng lệnh.
--> Dùng if / else bình thường hoặc toán tử 3 ngôi condition ? true : false
+-> Cách 1: Dùng if / else
+-> Cách 2: Toán tử 3 ngôi condition ? true : false
 
 ## Bài tập 3: viết đoạn mã cung cấp nhập đầu vào là một ký tự. Nhiệm vụ của bạn là tìm xem ký tự đã cho là bảng chữ cái viết hoa, một bảng chữ cái viết thường hay một ký tự không phải là chữ cái.
 
 B1: Khởi tạo biến có tên là character.
-B2: Tìm lại phần isalpha, isupper, islower -> Sử dụng if/else if/else
+B2: Tìm lại phần isalpha, isupper, islower (search W3School) -> Sử dụng if/else if/else
 Output: Nếu ký tự là bảng chữ cái viết hoa, chương trình của bạn sẽ in ra "upper-case alphabet".
 Nếu ký tự là bảng chữ cái viết thường, chương trình của bạn sẽ in ra "lower-case alphabet".
 Nếu ký tự không phải là ký tự chữ cái, chương trình của bạn sẽ in ra "not an alphabet".
 
-## Bài tập 4: Cho phương trình bậc 2: a * x^2 + b *x +c = 0 (a!=0) được nhập lần lượt từ bàn phím. Hãy viết chương trình thực hiện in ra số nghiệm của phương trình trên bằng ngôn ngữ C++. Kết quả hiển thị ra màn hình có các dạng sau:
+-> Hướng dẫn: khi có nhiều điều kiện, điều kiện đầu là if, điều kiện cuối cùng là else, các điều kiện ở giữa sẽ dùng else if
+
+## Bài tập 4: Cho phương trình bậc 2: a _ x^2 + b _ x +c = 0 (a!=0) được nhập lần lượt từ bàn phím. Hãy viết chương trình thực hiện in ra số nghiệm của phương trình trên bằng ngôn ngữ Javascript. Kết quả hiển thị ra màn hình có các dạng sau:
 
 - Nếu phương trình vô nghiệm (không có nghiệm số thực) in ra màn hình:
   The equation has no solution!
+  x1 =
+  x2 =
 - Nếu phương trình có một nghiệm số thực, in ra màn hình:
   The equation has one real solution!
+  x =
 - Nếu phương trình có 2 nghiệm số thực phân biệt, in ra màn hình:
   The equation has two real solutions!
-  B1: Tính delta = b*b - 4 *a *c
-  B2: Δ > 0: thì phương trình tồn tại 2 nghiệm thực phân biệt, tương tự Δ = 0 và Δ < 0
-  Check cả điều kiện a = 0 thì phương trình có nghiệm gì
+  -> Các bước để thực hiện bài toán:
+  B1: Tính delta = b*b - 4 * a \* c
+  B2: Nếu: Δ > 0: thì phương trình tồn tại 2 nghiệm thực phân biệt, tương tự Δ = 0 và Δ < 0
 
-## Bài tập 5: Hãy viết chương trình xác định 1 năm year nhập vào từ bàn phím có phải là năm nhuận hay không?
+## Bài tập 5: Hãy viết chương trình xác định 1 năm ( year) nhập vào từ bàn phím có phải là năm nhuận hay không?
+
+-> Năm nhuận là năm chia hết cho 4 và không chia hết cho 100 hoặc chia hết cho 400
+Khác: !==
+So sánh: ===
 
 - Nếu năm nhập vào là năm nhuận thì in ra:
-  Năm year là năm nhuận!
+  Năm {year} là năm nhuận!
 - Nếu năm nhập vào không phải là năm nhuận thì in ra:
-  Năm year không phải là năm nhuận!
+  Năm {year} không phải là năm nhuận!
 - Với year nhập từ bàn phím. Ví dụ:
-  Với year = 2000 thì in ra: Năm 2000 là năm nhuận!
-  Ngược lại với year=1999 thì in ra: Năm 1999 không phải là năm nhuận!
-  Năm nhuận là năm chia hết cho 4, không chia hết cho 100 hoặc chia hết cho 400
+  Với {year} = 2000 thì in ra: Năm 2000 là năm nhuận!
+  Ngược lại với year = 1999 thì in ra: Năm 1999 không phải là năm nhuận!
 
 ## Bài tập 6: Cho 1 số từ 0 đến 6. Viết chương trình để in ra thứ trong tuần
 
@@ -72,7 +81,7 @@ Cho number = 6; in ra: Saturday
 ## Bài tập 7:
 
 Cho 2 biến kiểu số nguyên a, b và 1 biến kiểu ký tự c. Cả 3 biến này đều được nhập từ bàn phím. Biết biến c là 1 trong 4
-ký tự '+', '-', '*' hoặc '/'. Bạn hãy viết chương trình hiển thị giá trị của biểu thức khi áp dụng phép toán c lên a và
+ký tự '+', '-', '\*' hoặc '/'. Bạn hãy viết chương trình hiển thị giá trị của biểu thức khi áp dụng phép toán c lên a và
 b. Ví dụ nếu bạn nhập a = 7, c = '+', b = 9
 Thì màn hình sẽ hiển thị ra: 16
 -> Gợi ý: sử dụng switch case
@@ -82,15 +91,9 @@ Thì màn hình sẽ hiển thị ra: 16
 Viết chương trình nhập vào tháng và hiển thị ra số ngày trong tháng đó. Xét cả trường hợp năm nhuận (tháng 2 có 29 ngày)
 -> Gợi ý: sử dụng switch case
 
-## Bài tập 9: Nhập vào 1 số và kiểm tra đấy có phải số nguyên tố hay không
-
-Note: Số nguyên tố là số chỉ chia hết cho 1 và chính nó, số đó không được chia hết số nào khoảng từ 1 đến chính số đó.
-Ví dụ: 13 là số nguyên tố, vì nó chỉ chia hết cho 1 và 13, 13 không chia hết số nào trong khoảng số đấy
-Các bước làm:
-B1: Nhập số nguyên cần kiểm tra từ người dùng.
-B2: Kiểm tra xem số đó có nhỏ hơn 2 hay không, vì tất cả các số nguyên tố lớn hơn 1.
-B3: Duyệt qua tất cả các số từ 2 đến căn bậc hai của số đó (ví dụ: nếu số là n thì bạn chỉ cần duyệt từ 2 đến căn bậc
-hai của n).
-B4: Kiểm tra xem số đó có chia hết cho bất kỳ số nào trong khoảng đó hay không. Nếu có, nó không phải là số nguyên tố.
-Nếu không, nó là số nguyên tố.
-B5: Xuất kết quả cho người dùng.
+case 11:
+case 4:
+case 6:
+case 9:
+clg 30 ngay;
+break;
