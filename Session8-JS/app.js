@@ -33,7 +33,6 @@
 // const uppercaseFullName = fullName.toUpperCase();
 // const lowercaseFullName = fullName.toLowerCase();
 
-// && - shift + 7: và (and)
 // BT1: 1 form gồm tên đăng nhập và mật khẩu, tên đăng nhập phải có ít nhất 6 ký tự, mật khẩu phải có ít nhất 8 ký tự và phải viết hoa hoàn toàn.
 // let username = "huyentran";
 // let password = "TRANHUYEN";
@@ -82,3 +81,6 @@ const PI = 3.14;
 const number = parseInt(prompt("Nhập số nguyên"));
 if (number > 0) console.log("Số dương");
 else console.log("Số âm");
+
+// && - shift + 7: và (and)
+// || - shift + \: hoặc (or)
