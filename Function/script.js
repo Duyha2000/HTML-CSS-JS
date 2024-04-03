@@ -1,4 +1,4 @@
-import { sum, minus } from "./sum.js";
+import { sum } from "./sum.js";
 
 // console.log(sum(2, 3));
 // console.log(minus(2, 3));

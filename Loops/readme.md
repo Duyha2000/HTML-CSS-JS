@@ -11,35 +11,27 @@ Ví dụ: 5! = 5 _ 4 _ 3 _ 2 _ 1 -> 120
 
 ## Bài tập 3:
 
-Bạn hãy viết chương trình nhập từ bàn phím hai số nguyên a và b. Sau đó hiển thị ra màn hình các số từ a tới b mà chia
-hết cho cả 3 và 5.
+Bạn hãy viết chương trình nhập từ bàn phím hai số nguyên a và b. Sau đó hiển thị ra màn hình các số từ a tới b mà chia hết cho cả 3 và 5.
 Ví dụ nếu nhập a = 1, b = 50 thì chương trình sẽ hiển thị ra màn hình: 15 30 45
 
 ## Bài tập 4: Nhập 1 số nguyên và tính tổng các số đó
 
-Ví dụ: 3243 -> Tổng = 3 + 2 + 4 + 3
+Ví dụ: 8243 -> Tổng = 8 + 2 + 4 + 3
+B1: Khai báo sum = 0
+
+B2.1: 8243 ?? 3 -> 8243 % 10 = 3 (sum)
+Math.floor(8243 / 10) = 824
+B2.2: 824 ?? 4 -> 824 % 10 = 4 (sum)
+Math.floor(824 / 10) = 82
+B2.3: 82 ?? 2 -> 82 % 10 = 2 (sum)
+Math.floor(82 / 10) = 8
+B2.4: 8 ?? 8 -> 8 % 10 = 8 (sum)
+Math.floor(8 / 10) = 0
+B2.5: 0 % 10 = 0
+Math.floor(0 / 10) = 0
 
 ## Bài tap 4.1 (nang cao): Nhập 1 số nguyên n>0 -> viết số nghịch đảo của nó
 
-3248 = 3 _ 10^3 + 2 _ 10^2 + 4 * 10^1 + 8 *10^0
-8423 = 8 _ 10^3 + 4 _ 10^2 + 2 * 10^1 + 8 *10^0
-
--> Dem so chu so cua n?
-let count = 0
-110 / 10 == 11
-count++;
-
-11 / 10 = 1
-count++
-
-1/10 = 0
-count++
--> count = 3
-let sum = 0
-for(let i = count - 1; i >=0; i--){
-sum += (n %10) \* Math.pow(10,i);
-}
-sum = ???
 Ví dụ: 3248 -> Nghịch đảo: 8423
 
 ## Bài tập 5: Chúng ta sẽ phát triển một ứng dụng nhiều chức năng cho phép người dùng chọn chức năng để sử dụng.

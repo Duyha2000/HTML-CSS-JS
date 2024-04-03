@@ -7,10 +7,39 @@
     <title>Loops</title>
   </head>
   <body>
+    <div>A</div>
     <!-- <script src="app.js"></script> -->
     <!-- <script src="scope.js"></script> -->
-    <script src="app1.js"></script>
+    <!-- <script src="app1.js"></script>
+    <script src="loopsJava.js"></script> -->
 
     <!-- <script src="loops.js"></script> -->
+    <script>
+      // for (let i = 0; i < 5; i++) {
+      //   for (let j = 0; j < 4; j++) {
+      //     console.log(j);
+      //   }
+      //   console.log("\n");
+      // }
+      // Tổng 30 số đầu tiên chia hết cho 7
+      let sum = 0;
+      let i = 0;
+      let count = 0;
+      while (count < 30) {
+        if (i % 7 === 0) {
+          sum += i;
+          count++;
+        }
+        i++;
+      }
+      // for (let count = 0; count < 30;______) {
+      //   if (i % 7 === 0) {
+      //     sum += i;
+      //     count++;
+      //   }
+      //   i++;
+      // }
+      console.log(sum);
+    </script>
   </body>
 </html>

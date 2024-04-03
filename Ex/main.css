@@ -1,0 +1,38 @@
+.div {
+  width: 600px;
+  height: 100px;
+  background-color: white;
+  display: flex;
+  gap: 350px;
+}
+.container {
+  height: 500px;
+  background-color: rgb(184, 179, 179);
+}
+#boxcontainer {
+  width: 750px;
+  height: 800pxpx;
+  background-color: rgb(11, 222, 88);
+}
+#flexbox {
+  display: flex;
+  gap: 10px;
+}
+#box1 {
+  width: 250px;
+  height: 250px;
+  background-color: yellow;
+  border: 3px solid black;
+}
+#box2 {
+  width: 250px;
+  height: 250px;
+  background-color: rgb(11, 222, 88);
+  border: 3px solid black;
+}
+#box3 {
+  width: 250px;
+  height: 250px;
+  background-color: rgb(167, 163, 163);
+  border: 3px solid black;
+}

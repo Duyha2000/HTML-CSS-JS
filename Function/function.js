@@ -1,9 +1,9 @@
-import isPrime from "./primeNumber.js";
-import { sumTwoNumber, subtracTwoNumber } from "./sumTwoNumber.js";
-console.log(sumTwoNumber(2, 3)); // 5
-// SỰ khấc nhau giữa export và export default như thế nào
-console.log(sumTwoNumber(4, 6)); // 10
-console.log(subtracTwoNumber(6, 4)); // 2
+// import isPrime from "./primeNumber.js";
+// import { sumTwoNumber, subtracTwoNumber } from "./sumTwoNumber.js";
+// console.log(sumTwoNumber(2, 3)); // 5
+// // Sự khấc nhau giữa export và export default như thế nào
+// console.log(sumTwoNumber(4, 6)); // 10
+// console.log(subtracTwoNumber(6, 4)); // 2
 // 1 công việc lớn Xây 1 căn nhà:
 // 1 phần nhỏ (chức năng: function): Huyền làm phần nóc
 // 1 phần nhỏ: Trang làm phần thân
@@ -216,38 +216,115 @@ console.log(subtracTwoNumber(6, 4)); // 2
 // In ra 20 số nguyên tố:
 // Export: xuất ra - import: nhập vào
 
+// let count = 0;
+// let prime = 2;
+// let sum = 0;
+// while (count < 20) {
+//   if (isPrime(prime)) {
+//     count++;
+//     sum += prime;
+//     console.log(prime);
+//   }
+//   prime++;
+// }
+// console.log(sum);
+
+// // Nhập 1 số và tính tổng các chữ số giai thừa của số đấy
+// // 5 - > 120 -> 1 + 2 + 0
+// let number = parseInt(prompt("input number"));
+
+// let factorial = (number) => {
+//   let result = 1;
+//   for (let i = 1; i <= number; i++) result *= i;
+//   return result;
+// };
+
+// let sumNumber = (number) => {
+//   let sum = 0;
+//   // 120 => 1 + 2 + 0
+//   while (number > 0) {
+//     sum += number % 10;
+//     number /= Math.floor(number);
+//   }
+//   return sum;
+// };
+
+// let a = factorial(5); // 120
+// document.write(sumNumber(a)); // 1 + 2 + 0 = 3
+
+// //
+
+// function isPrime(n) {
+//   if (n < 2) return fasle;
+//   for (let i = 2; i <= Math.sqrt(n); i++) {
+//     if (n % i === 0) return false;
+//   }
+//   return true;
+// }
+
+// let prime20 = [];
+// let prime = 2;
+// let count = 0;
+// while (count < 20) {
+//   if (isPrime(prime)) {
+//     prime20.push(prime);
+//     count++;
+//   }
+//   prime++;
+// }
+// console.log(prime20);
+
+// //
+// function checkNumber(n) {
+//   for (let i = 1; i <= n; i++) {
+//     if (i % 3 === 0 && i % 5 === 0 && i % 7 === 0) return true;
+//   }
+//   return false;
+// }
+// let number = 1;
+// let isCheck = true;
+// while (isCheck) {
+//   if (checkNumber(number)) {
+//     console.log(number);
+//     isCheck = false;
+//   }
+//   number++;
+// }
+
 let count = 0;
-let prime = 2;
-let sum = 0;
-while (count < 20) {
-  if (isPrime(prime)) {
-    count++;
-    sum += prime;
-    console.log(prime);
-  }
-  prime++;
+while (count++ < 10) {
+  count++;
 }
-console.log(sum);
+console.log(count);
 
-// Nhập 1 số và tính tổng các chữ số giai thừa của số đấy
-// 5 - > 120 -> 1 + 2 + 0
-let number = parseInt(prompt("input number"));
+// let a = 6;
+// if (++a > 6) {
+//   // ++a = 7 > 6 chạy code trong if
+//   a += 5;
+//   a += 4;
+// }
 
-let factorial = (number) => {
-  let result = 1;
-  for (let i = 1; i <= number; i++) result *= i;
-  return result;
-};
+// console.log(a);
 
-let sumNumber = (number) => {
-  let sum = 0;
-  // 120 => 1 + 2 + 0
-  while (number > 0) {
-    sum += number % 10;
-    number /= Math.floor(number);
-  }
-  return sum;
-};
+let a = 6;
+// Lấy giá trị a = 6, sau đó a lên 1 đơn vị = 7, sau đó ++a thì a sẽ lên 1 đơn vị nữa là 8, sau đó a++ thì a sẽ lên 1 đơn vị nữa là 9, sau đó ++a thì a sẽ lên 1 đơn vị nữa là 10
+let result = a++ + ++a + a++ + ++a;
+//           6 +   8 +    8 +   10
+console.log(a);
+console.log(result);
 
-let a = factorial(5); // 120
-document.write(sumNumber(a)); // 1 + 2 + 0 = 3
+/*
+- let a = 6; - Biến a được khởi tạo với giá trị là 6.
+
+- let result = a++ + ++a + a++ + ++a;
+
+- a++: Giá trị hiện tại của a (6) được sử dụng trong phép cộng, sau đó a được tăng lên 1, nên a bây giờ là 7.
+- ++a: a được tăng lên 1 trước (nên a bây giờ là 8), sau đó giá trị mới của a (8) được sử dụng trong phép cộng.
+a++: Giá trị hiện tại của a (8) được sử dụng trong phép cộng, sau đó a được tăng lên 1, nên a bây giờ là 9.
+++a: a được tăng lên 1 trước (nên a bây giờ là 10), sau đó giá trị mới của a (10) được sử dụng trong phép cộng.
+Vì vậy, result sẽ là 6 + 8 + 8 + 10 = 32.
+
+console.log(a); - In giá trị cuối cùng của a (10) ra console.
+
+console.log(result); - In giá trị của result (32) ra console.
+*/
