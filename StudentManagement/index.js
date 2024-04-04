@@ -8,12 +8,11 @@
 // Lấy dữ liệu từng ô input
 const fullName = document.getElementById("fullName");
 const date = document.getElementById("date");
-const gender = document.getElementById("gender");
 const classmate = document.getElementById("classmate");
 const image = document.getElementById("image");
-let students = JSON.parse(localStorage.getItem("students")) || [];
+const gender = document.getElementsByName("gender");
 
-console.log(JSON.parse(localStorage.getItem("students")));
+let students = JSON.parse(localStorage.getItem("students")) || [];
 let tbody = document.getElementById("tbody1");
 // Hiển thị thông tin sinh viên:
 function displayData() {
@@ -36,9 +35,10 @@ function displayData() {
   // Sau khi submit form cần reset lại các giá trị ô input
   fullName.value = "";
   date.value = "";
-  gender.value = "";
   classmate.value = "";
   image.value = "";
+  // Reset radio button
+  gender[0].checked = true;
 }
 // Edit student:
 function editStudent(studentId) {
@@ -47,10 +47,13 @@ function editStudent(studentId) {
   document.getElementById("add").style.display = "none";
   document.getElementById("save").style.display = "block";
   let index = students.findIndex((student) => student.id == studentId); // 1
-  console.log(students[index]);
+  console.log(students[index].gender);
   fullName.value = students[index].fullName;
   date.value = students[index].date;
-  gender.value = students[index].gender;
+  // Gender
+  for (let i = 0; i < gender.length; i++) {
+    if (students[index].gender === gender[i].value) gender[i].checked = true;
+  }
   classmate.value = students[index].classmate;
   image.value = students[index].image;
 }
@@ -62,11 +65,12 @@ function saveStudent() {
     (student) => student.id == localStorage.getItem("studentId")
   );
   console.log(index, "index");
+
   students[index] = {
     id: students[index].id,
     fullName: fullName.value,
     date: date.value,
-    gender: gender.value,
+    gender: document.querySelector('input[name="gender"]:checked').value,
     classmate: classmate.value,
     image: image.value,
   };
@@ -95,11 +99,16 @@ displayData();
 
 // Thêm sinh viên
 function addStudent() {
+  let genderValue;
+  for (let i = 0; i < gender.length; i++) {
+    if (gender[i].checked) genderValue = gender[i].value;
+  }
+  console.log(genderValue, "genderValue");
   const newStudent = {
     id: Math.floor(Math.random() * 1000),
     fullName: fullName.value,
     date: date.value,
-    gender: gender.value,
+    gender: genderValue,
     classmate: classmate.value,
     image: image.value,
   };
@@ -109,6 +118,3 @@ function addStudent() {
   displayData();
   alert("Thêm học sinh mới thành công!!!!");
 }
-// tbody.innerHtml = ...
-
-// Chỉnh sửa dữ liệu:
