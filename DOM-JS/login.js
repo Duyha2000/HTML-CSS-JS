@@ -35,14 +35,13 @@ function handleLogin(event) {
   event.preventDefault();
   let isCheckExistedEmail = false;
   let isCheckExistedPassword = false; // biến kiểm tra password có trùng với email đăng nhập hay không
-  let indexUser = users.findIndex((user) => user.email == email.value); // Không nhập thông tin submit form thì indexUser = -1
+  let indexUser = users.findIndex((user) => user.email == email.value); //Không nhập thông tin submit form thì indexUser = -1
   if (indexUser !== -1) {
     isCheckExistedEmail = true;
     if (users[indexUser].password === password.value) {
       isCheckExistedPassword = true;
     }
   }
-
   if (isCheckEmail === true && isCheckPassword === true) {
     // Check tài khoản -> check mật khẩu
     if (isCheckExistedEmail === true) {

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/lelinh014756/fui-toast-js@master/assets/css/toast@1.0.1/fuiToast.min.css"
+    />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="fui-toast"></div>
+
+    <h1>Change password</h1>
+
+    <div id="congtinh"></div>
+
+    <form id="formRegistration" onsubmit="handleSubmit(event)">
+      <input
+        class="input-height"
+        oninput="handleEmailChange()"
+        id="email"
+        type="text"
+        placeholder="Enter your email"
+      />
+      <p id="error-email"></p>
+      <input
+        class="input-height"
+        oninput="handlePasswordChange()"
+        id="oldPassword"
+        type="text"
+        placeholder="Old password"
+      />
+      <p id="error-old-password"></p>
+      <input
+        class="input-height"
+        oninput="handleNewPasswordChange()"
+        id="newPassword"
+        type="text"
+        name=""
+        placeholder="New password"
+      />
+      <p id="error-new-password"></p>
+      <input
+        class="input-height"
+        oninput="handleConfirmPasswordChange()"
+        id="confirmNewPassword"
+        type="text"
+        name=""
+        placeholder="confirm new password"
+      />
+      <p id="error-confirm-new-password"></p>
+      <button type="submit" id="btn">Change Password</button>
+    </form>
+
+    <style>
+      #formRegistration {
+        display: grid;
+        width: 300px;
+        gap: 20px;
+      }
+
+      .flex-p-a {
+        display: flex;
+      }
+
+      .input-height {
+        height: 30px;
+        border: 1px solid rgb(149, 145, 145);
+        border-radius: 4px;
+      }
+
+      #btn {
+        height: 35px;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        background-color: rgb(53, 53, 237);
+        cursor: pointer;
+      }
+
+      .magin-link {
+        margin-top: 15px;
+        margin-left: 5px;
+        text-decoration: none;
+      }
+
+      .accept-color {
+        color: rgb(160, 141, 141);
+      }
+      .flex-input-span {
+        display: flex;
+        gap: 5px;
+      }
+      #error-name {
+        display: none;
+        color: red;
+        margin: -10px;
+        margin-left: 3px;
+      }
+      #error-email {
+        display: none;
+        color: red;
+        margin: -10px;
+        margin-left: 3px;
+      }
+      #error-password {
+        display: none;
+        color: red;
+        margin: -10px;
+        margin-left: 3px;
+      }
+      #error-confirm-password {
+        display: none;
+        color: red;
+        margin: -10px;
+        margin-left: 3px;
+      }
+      #error-checkbox {
+        display: none;
+        color: red;
+        margin: -10px;
+        margin-left: 3px;
+      }
+    </style>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/gh/lelinh014756/fui-toast-js@master/assets/js/toast@1.0.1/fuiToast.min.js"
+    ></script>
+
+    <script src="./recover.js"></script>
+  </body>
+</html>
