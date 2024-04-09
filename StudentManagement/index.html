@@ -20,6 +20,12 @@
     <!-- tr: table row: 1 dòng -->
     <!-- td: table data -->
     <h1>Quản lý sinh viên</h1>
+    <button onclick="sortStudent()">Sort Student</button>
+    <div class="field">
+      <input type="text" placeholder="Filter input" id="filterStudent" />
+      <button onclick="searchStudents()">Filter</button>
+    </div>
+
     <table border="1">
       <tr>
         <th colspan="3" style="text-align: center">Thông tin sinh viên</th>

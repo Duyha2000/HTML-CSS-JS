@@ -47,10 +47,9 @@ function editStudent(studentId) {
   document.getElementById("add").style.display = "none";
   document.getElementById("save").style.display = "block";
   let index = students.findIndex((student) => student.id == studentId); // 1
-  console.log(students[index].gender);
   fullName.value = students[index].fullName;
   date.value = students[index].date;
-  // Gender
+  // Gender:
   for (let i = 0; i < gender.length; i++) {
     if (students[index].gender === gender[i].value) gender[i].checked = true;
   }
@@ -99,11 +98,9 @@ displayData();
 
 // Thêm sinh viên
 function addStudent() {
-  let genderValue;
-  for (let i = 0; i < gender.length; i++) {
+  for (let i in gender) {
     if (gender[i].checked) genderValue = gender[i].value;
   }
-  console.log(genderValue, "genderValue");
   const newStudent = {
     id: Math.floor(Math.random() * 1000),
     fullName: fullName.value,
@@ -117,4 +114,48 @@ function addStudent() {
   localStorage.setItem("students", JSON.stringify(students));
   displayData();
   alert("Thêm học sinh mới thành công!!!!");
+}
+
+function sortStudent() {
+  students.sort((a, b) => {
+    if (a.fullName < b.fullName) return -1;
+    if (a.fullName > b.fullName) return 1;
+    return 0; // Trả về 0 nếu hai chuỗi bằng nhau
+  });
+  displayData();
+}
+
+// Tìm kiếm sinh viên theo tên:
+let filterStudent = document.getElementById("filterStudent");
+
+function searchStudents() {
+  let searchQuery = filterStudent.value.trim().toLowerCase(); // trim(): loại bỏ khoảng trắng ở đầu và cuối chuỗi, toLowerCase(): chuyển chuỗi thành chữ thường
+
+  // Lọc danh sách sinh viên theo tên, includes(): kiểm tra chuỗi có chứa chuỗi con không
+  let filteredStudents = students.filter((student) =>
+    student.fullName.toLowerCase().includes(searchQuery)
+  );
+
+  let html = "";
+  for (let i = 0; i < filteredStudents.length; i++) {
+    let student = filteredStudents[i];
+    html += `
+      <tr>
+        <td>${student.fullName}</td>
+        <td>${student.date}</td>
+        <td>${student.gender}</td>
+        <td>${student.classmate}</td>
+        <td>${student.image}</td>
+        <td>
+          <button onclick="editStudent('${student.id}')">Edit</button>
+        </td>
+        <td>
+          <button onclick="deleteStudent('${student.id}')">Delete</button>
+        </td>
+      </tr>
+    `;
+  }
+
+  // Hiển thị kết quả lọc trực tiếp trong tbody
+  document.getElementById("tbody1").innerHTML = html;
 }

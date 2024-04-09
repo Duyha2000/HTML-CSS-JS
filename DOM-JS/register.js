@@ -139,9 +139,14 @@ let congtinh = document.getElementById("congtinh");
 const users = JSON.parse(localStorage.getItem("users")) || [];
 console.log(users, "aaa");
 
-for (let i in users) {
-  congtinh.innerHTML += `<div> ${users[i].name} - ${users[i].email} </div>`;
+function display() {
+  let html = ``;
+  for (let i in users) {
+    html += `<div> ${users[i].name} - ${users[i].email} </div>`;
+  }
+  congtinh.innerHTML = html;
 }
+display();
 
 //Lấy giá trị của form khi nhấn submit
 function handleSubmit(event) {
@@ -165,8 +170,13 @@ function handleSubmit(event) {
       // window.location.href = "login.html";
       users.push(newUser);
       console.log(newUser);
+
       localStorage.setItem("users", JSON.stringify(users));
       FuiToast.success("Dang ky tai khoan thanh cong!");
+      //Chuyen sang trang khac sau khi dang ky tai khoan thanh cong
+      event.target.reset();
+      window.location.href = "login.html";
+      display();
     } else {
       FuiToast.error(
         "Email da ton tai trong he thong, ban khong the dang ky nua!!!"

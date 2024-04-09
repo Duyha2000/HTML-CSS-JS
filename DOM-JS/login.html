@@ -3,30 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdn.jsdelivr.net/gh/lelinh014756/fui-toast-js@master/assets/css/toast@1.0.1/fuiToast.min.css"
-    />
-
     <title>Document</title>
   </head>
   <body>
     <div id="fui-toast"></div>
 
-    <h1>Registration</h1>
+    <h1>Login Form</h1>
 
     <div id="congtinh"></div>
 
-    <form id="formRegistration" onsubmit="handleSubmit(event)">
-      <input
-        class="input-height"
-        oninput="handleNameChange()"
-        id="name"
-        type="text"
-        placeholder="Enter your name"
-      />
-      <p id="error-name"></p>
+    <form id="formRegistration" onsubmit="handleLogin(event)">
       <input
         class="input-height"
         oninput="handleEmailChange()"
@@ -43,24 +29,12 @@
         placeholder="Create password"
       />
       <p id="error-password"></p>
-      <input
-        class="input-height"
-        oninput="handleCreatePasswordChange()"
-        id="confirm-password"
-        type="text"
-        name=""
-        placeholder="Confirm password"
-      />
-      <p id="error-confirm-password"></p>
-      <div class="flex-input-span">
-        <input id="checkbox" oninput="handleCheckboxChange()" type="checkbox" />
-        <span class="accept-color">I accept all terms & conditions</span>
-      </div>
+
       <p id="error-checkbox"></p>
-      <button type="submit" id="btn">Register Now</button>
+      <button type="submit" id="btn">Login Now</button>
       <div class="flex-p-a">
-        <p>Already have an account?</p>
-        <a class="magin-link" href="">Login now</a>
+        <p>You don't have an account?</p>
+        <a class="magin-link" href="register.html">Register now</a>
       </div>
     </form>
 
@@ -139,6 +113,6 @@
       src="https://cdn.jsdelivr.net/gh/lelinh014756/fui-toast-js@master/assets/js/toast@1.0.1/fuiToast.min.js"
     ></script>
 
-    <script src="./index.js"></script>
+    <script src="./login.js"></script>
   </body>
 </html>
